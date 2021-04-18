@@ -1,12 +1,9 @@
 package com.zombieliquid.Events;
 
 import com.zombieliquid.List.ItemList;
-import com.zombieliquid.List.PotionList;
 import com.zombieliquid.ZombieLiquid;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.Potions;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,7 +19,7 @@ public class RegisterEvents {
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){
         event.getRegistry().registerAll(
-            ItemList.rotten_flesh_plus = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS))
+            ItemList.rotten_flesh_plus = new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS).stacksTo(64))
                     .setRegistryName(location("rotten_flesh_plus"))
         );
     }
